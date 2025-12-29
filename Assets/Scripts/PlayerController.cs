@@ -4,12 +4,16 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Vector2 padding = new Vector2(0.2f, 0.2f);
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float interval = 0.25f;
+
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private GameControls controls;
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
+    private float timeCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -34,6 +38,14 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
         moveDirection = controls.Player.Move.ReadValue<Vector2>();
+
+        // １秒に４発のbulletを作成する
+        timeCount += Time.deltaTime;
+        if (timeCount >= interval)
+        {
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
+            timeCount = 0;
+        }
     }
 
     void FixedUpdate()
