@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -25,6 +24,14 @@ public class Bullet : MonoBehaviour
     void CheckOutOfBounce()
     {
         if (rb.position.y > topBound)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
