@@ -13,7 +13,7 @@ public class PlayerControler : MonoBehaviour
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
-    private float timeCount;
+    private float timeCount = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
