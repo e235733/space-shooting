@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4302923516543555394}
   - component: {fileID: 4653741609361170949}
   - component: {fileID: 5559900436232118237}
-  - component: {fileID: 6022331220921918315}
+  - component: {fileID: 4305420427020505291}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6022331220921918315
+--- !u!114 &4305420427020505291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7724960263244370422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc7ee7bb3b8a345eaa7bde446e041d50, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fa240f6fccd34be3bbb4461e4e22f62, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBulletController
   bulletSpeed: 10
-  topMargin: 2
+  Margin: 5
