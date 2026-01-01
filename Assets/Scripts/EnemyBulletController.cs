@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class EnemyBulletController : MonoBehaviour
+public class EnemyBulletController : BulletController
 {
+    [SerializeField] GameObject player;
+    private Vector2 launchDirection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Update is called once per frame
+    protected override void Start()
     {
-        
+        base.Start();
+        rb.linearVelocity = transform.up * bulletSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

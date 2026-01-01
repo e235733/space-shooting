@@ -21,7 +21,6 @@ public abstract class BulletController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        rb.linearVelocityY = bulletSpeed;
         CheckOutOfBounce();
     }
 
