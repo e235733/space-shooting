@@ -6,6 +6,7 @@ public abstract class BulletController : MonoBehaviour
     [SerializeField] protected float Margin;
     [SerializeField] protected string targetTag;
     [SerializeField] protected int power;
+    [SerializeField] protected GameObject collisionEffectPrefab;
     protected Rigidbody2D rb;
     private float topBound, bottomBound, rightBound, leftBound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,7 @@ public abstract class BulletController : MonoBehaviour
         {
             LifeController targetLife = collision.GetComponentInParent<LifeController>();
             targetLife.ApplyDamage(power);
+            Instantiate(collisionEffectPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

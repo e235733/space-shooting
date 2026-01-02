@@ -173,3 +173,4 @@ MonoBehaviour:
   Margin: 5
   targetTag: Player
   power: 2
+  collisionEffectPrefab: {fileID: 7736402026943653544, guid: d2b8e7491e88f469db73d81fddcbfe57, type: 3}
