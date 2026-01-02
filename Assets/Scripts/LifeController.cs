@@ -4,6 +4,7 @@ public class LifeController : MonoBehaviour
 {
     [SerializeField] private int maxHp;
     [SerializeField] private HPBarController hpBar;
+    [SerializeField] private GameObject explosionEffectPrefab;
     private int currentHp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -20,6 +21,7 @@ public class LifeController : MonoBehaviour
         }
         if (currentHp <= 0)
         {
+            Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
