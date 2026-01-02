@@ -42,5 +42,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bullets
+    uniqueID: 3011086031
+    locked: 0
+  - name: Characters
+    uniqueID: 648383339
+    locked: 0
   m_RenderingLayers:
   - Default
