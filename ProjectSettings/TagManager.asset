@@ -48,5 +48,8 @@ TagManager:
   - name: Characters
     uniqueID: 648383339
     locked: 0
+  - name: Indicators
+    uniqueID: 624699539
+    locked: 0
   m_RenderingLayers:
   - Default

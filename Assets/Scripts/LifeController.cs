@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class LifeController : MonoBehaviour
 {
-    [SerializeField] int maxHp;
+    [SerializeField] private int maxHp;
+    [SerializeField] private HPBarController hpBar;
     private int currentHp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -13,6 +14,10 @@ public class LifeController : MonoBehaviour
     public void ApplyDamage(int damageAmount)
     {
         currentHp -= damageAmount;
+        if (hpBar != null)
+        {
+            hpBar.UpdateHPBar(currentHp, maxHp);
+        }
         if (currentHp <= 0)
         {
             Destroy(gameObject);
