@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 999007559}
   - component: {fileID: 999007558}
   - component: {fileID: 999007562}
+  - component: {fileID: 999007563}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -522,6 +523,19 @@ MonoBehaviour:
   enemyBullet: {fileID: 9041059412943723450, guid: 97433924c8e394b61ab0b91a404e40d5, type: 3}
   interval: 0.5
   player: {fileID: 1869634343}
+--- !u!114 &999007563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999007557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804baadc9be1c439a97c2758165dbae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LifeController
+  maxHp: 50
 --- !u!1 &1279451686
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +969,7 @@ GameObject:
   - component: {fileID: 1869634345}
   - component: {fileID: 1869634344}
   - component: {fileID: 1869634346}
+  - component: {fileID: 1869634347}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1023,6 +1038,19 @@ MonoBehaviour:
   padding: {x: 1, y: 1}
   bulletPrefab: {fileID: 7724960263244370422, guid: af722fd4fd10f4989b6cfa822f84f815, type: 3}
   interval: 0.25
+--- !u!114 &1869634347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869634343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804baadc9be1c439a97c2758165dbae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LifeController
+  maxHp: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

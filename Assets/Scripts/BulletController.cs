@@ -2,8 +2,10 @@ using UnityEngine;
 
 public abstract class BulletController : MonoBehaviour
 {
-    [SerializeField] protected float bulletSpeed = 10f;
+    [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float Margin;
+    [SerializeField] protected string targetTag;
+    [SerializeField] protected int power;
     protected Rigidbody2D rb;
     private float topBound, bottomBound, rightBound, leftBound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +30,15 @@ public abstract class BulletController : MonoBehaviour
     {
         if (rb.position.y > topBound || rb.position.y < bottomBound || rb.position.x > rightBound || rb.position.x < leftBound)
         {
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(targetTag))
+        {
+            LifeController targetLife = collision.GetComponentInParent<LifeController>();
+            targetLife.ApplyDamage(power);
             Destroy(gameObject);
         }
     }

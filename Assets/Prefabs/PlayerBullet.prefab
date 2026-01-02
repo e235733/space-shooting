@@ -181,3 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBulletController
   bulletSpeed: 10
   Margin: 5
+  targetTag: Enemy
+  power: 2

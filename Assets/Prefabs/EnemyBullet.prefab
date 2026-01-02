@@ -171,3 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bulletSpeed: 5
   Margin: 5
+  targetTag: Player
+  power: 2
+  player: {fileID: 0}
