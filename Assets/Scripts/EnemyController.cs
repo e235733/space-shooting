@@ -1,32 +1,46 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyBullet;
-    [SerializeField] private float interval;
+    [SerializeField] private GameObject trackingBulletPrefab;
+    [SerializeField] private GameObject spreadingBulletPrefab;
+    [SerializeField] private float trackingBulletInterval;
+    [SerializeField] private float spreadingBulletInterval;
+    [SerializeField] private float angleStep;
     [SerializeField] private GameObject player;
-    private Rigidbody2D rb;
-    private float timeCount = 0;
+    private float trackingBulletTimeCount = 0;
+    private float spreadingBulletTimeCount = 0;
+    private float currentAngle = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCount += Time.deltaTime;
-        if (timeCount > interval)
+        trackingBulletTimeCount += Time.deltaTime;
+        spreadingBulletTimeCount += Time.deltaTime;
+        if (trackingBulletTimeCount >= trackingBulletInterval)
         {
             if (player != null)
             {
                 Transform target = player.transform;
                 Vector2 direction = target.position - transform.position;
-                GameObject bullet = Instantiate(enemyBullet, transform.position, transform.rotation);
-                bullet.transform.up = direction;
+                GameObject trackingBullet = Instantiate(trackingBulletPrefab, transform.position, transform.rotation);
+                trackingBullet.transform.up = direction;
             }
-            timeCount = 0;
+            trackingBulletTimeCount = 0;
+        }
+        if (spreadingBulletTimeCount >= spreadingBulletInterval)
+        {
+            currentAngle += angleStep;
+            currentAngle %= 360f;
+            Quaternion rotation = Quaternion.Euler(0, 0, currentAngle);
+            Instantiate(spreadingBulletPrefab, transform.position, rotation);
+            spreadingBulletTimeCount = 0;
         }
     }
 }
