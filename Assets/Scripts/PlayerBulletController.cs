@@ -8,12 +8,4 @@ public class PlayerBulletController : BulletController
         base.Start();
         rb.linearVelocityY = bulletSpeed;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

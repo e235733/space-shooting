@@ -19,10 +19,13 @@ public class EnemyController : MonoBehaviour
         timeCount += Time.deltaTime;
         if (timeCount > interval)
         {
-            Transform target = player.transform;
-            Vector2 direction = target.position - transform.position;
-            GameObject bullet = Instantiate(enemyBullet, transform.position, transform.rotation);
-            bullet.transform.up = direction;
+            if (player != null)
+            {
+                Transform target = player.transform;
+                Vector2 direction = target.position - transform.position;
+                GameObject bullet = Instantiate(enemyBullet, transform.position, transform.rotation);
+                bullet.transform.up = direction;
+            }
             timeCount = 0;
         }
     }
