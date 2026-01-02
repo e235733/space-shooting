@@ -51,5 +51,8 @@ TagManager:
   - name: Indicators
     uniqueID: 624699539
     locked: 0
+  - name: Results
+    uniqueID: 2417534063
+    locked: 0
   m_RenderingLayers:
   - Default
