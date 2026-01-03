@@ -51,7 +51,7 @@ PCでの動作に対応しています。
 
 1.  このリポジトリをクローンします。
     ```bash
-    git clone [https://github.com/e235733/space-shooting]
+    git clone https://github.com/e235733/space-shooting
     ```
 2.  Unity Hubを開き、「Add (追加)」からクローンしたフォルダを選択します。
 3.  プロジェクトを開き、`Scenes` フォルダ内のメインシーンを再生します。
