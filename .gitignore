@@ -104,3 +104,8 @@ InitTestScene*.unity*
 
 # macOS (Added)
 .DS_Store
+
+# Unity Play / WebGL Publisher temporary files
+/[Ww]ebGL [Bb]uilds/
+/webgl_sharing
+connectwebgl.zip
